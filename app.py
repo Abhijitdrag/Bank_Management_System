@@ -6,6 +6,7 @@ st.title("🏦 Welcome to Streamlit Bank")
 
 menu = st.sidebar.selectbox("Choose Action", ["Create Account", "Deposit", "Withdraw", "Show Details", "Update Info", "Delete Account"])
 
+# create account
 if menu == "Create Account":
     st.subheader("Create New Account")
     name = st.text_input("Your Name")
@@ -74,4 +75,5 @@ elif menu == "Delete Account":
 
     if st.button("Delete"):
         success, msg = Bank.delete_user(acc_no, int(pin))
+
         st.success(msg) if success else st.error(msg)
